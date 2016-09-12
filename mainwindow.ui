@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>INBRAMED Cabrera</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>411</width>
+      <height>501</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="patientTab">
+     <attribute name="title">
+      <string>Patient</string>
+     </attribute>
+     <widget class="QLabel" name="patientLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>8</y>
+        <width>391</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>No patient open.</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Anamnesis</string>
+     </attribute>
+     <widget class="QTextBrowser" name="textBrowser_anamnesis">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>391</width>
+        <height>461</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="watermark">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>30</y>
+      <width>362</width>
+      <height>471</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="img.qrc">:/img/inbramed-watermark.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <widget class="QMenu" name="menuNew">
+     <property name="title">
+      <string>New...</string>
+     </property>
+     <addaction name="action_newPatient"/>
+     <addaction name="action_newAnamnesis"/>
+    </widget>
+    <widget class="QMenu" name="menuOpen">
+     <property name="title">
+      <string>Open...</string>
+     </property>
+     <addaction name="action_openPatient"/>
+     <addaction name="action_openAnamnesis"/>
+    </widget>
+    <widget class="QMenu" name="menuClose_patient">
+     <property name="title">
+      <string>Close...</string>
+     </property>
+     <addaction name="action_closePatient"/>
+     <addaction name="action_closeAnamnesis"/>
+    </widget>
+    <widget class="QMenu" name="menuRecent">
+     <property name="title">
+      <string>Recent...</string>
+     </property>
+     <widget class="QMenu" name="menu_recentPatients">
+      <property name="title">
+       <string>Patients...</string>
+      </property>
+      <addaction name="action_placeholderRP"/>
+     </widget>
+     <widget class="QMenu" name="menu_recentAnamnesis">
+      <property name="title">
+       <string>Anamnesis...</string>
+      </property>
+      <addaction name="action_placeholderRA"/>
+     </widget>
+     <addaction name="menu_recentPatients"/>
+     <addaction name="menu_recentAnamnesis"/>
+    </widget>
+    <addaction name="separator"/>
+    <addaction name="menuNew"/>
+    <addaction name="menuOpen"/>
+    <addaction name="menuRecent"/>
+    <addaction name="menuClose_patient"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>&amp;Edit</string>
+    </property>
+    <addaction name="action_editPatient"/>
+    <addaction name="action_edtAnamnesis"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="action_About"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>&amp;Tools</string>
+    </property>
+    <addaction name="action_vo2000Interface"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="movable">
+    <bool>true</bool>
+   </property>
+   <property name="floatable">
+    <bool>true</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_newPatient_2"/>
+   <addaction name="action_openPatient_2"/>
+   <addaction name="separator"/>
+   <addaction name="action_newAnamnesis_2"/>
+   <addaction name="action_openAnamnesis_2"/>
+   <addaction name="separator"/>
+   <addaction name="action_vo2000Interface_2"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="action_About">
+   <property name="text">
+    <string>About...</string>
+   </property>
+  </action>
+  <action name="action_vo2000Interface">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img/vo2000.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>VO2000 interface...</string>
+   </property>
+  </action>
+  <action name="action_vo2000Interface_2">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img/vo2000.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>VO2000 interface...</string>
+   </property>
+  </action>
+  <action name="action_newPatient">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/new-patient-icon.png</normaloff>:/img/new-patient-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>New patient...</string>
+   </property>
+  </action>
+  <action name="action_newPatient_2">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/new-patient-icon.png</normaloff>:/img/new-patient-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>New patient...</string>
+   </property>
+  </action>
+  <action name="action_openPatient">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/open-patient-icon.png</normaloff>:/img/open-patient-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open patient...</string>
+   </property>
+  </action>
+  <action name="action_editPatient">
+   <property name="text">
+    <string>Edit patient...</string>
+   </property>
+  </action>
+  <action name="action_openPatient_2">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/open-patient-icon.png</normaloff>:/img/open-patient-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open patient...</string>
+   </property>
+  </action>
+  <action name="action_null">
+   <property name="text">
+    <string>&lt;null&gt;</string>
+   </property>
+  </action>
+  <action name="action_newAnamnesis_2">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/anamnesis-icon.png</normaloff>:/img/anamnesis-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>New anamnesis...</string>
+   </property>
+   <property name="toolTip">
+    <string>New anamnesis</string>
+   </property>
+  </action>
+  <action name="action_newAnamnesis">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/anamnesis-icon.png</normaloff>:/img/anamnesis-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>New anamnesis...</string>
+   </property>
+   <property name="toolTip">
+    <string>New anamnesis</string>
+   </property>
+  </action>
+  <action name="action_openAnamnesis">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/anamnesis-open-icon.png</normaloff>:/img/anamnesis-open-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open anamnesis...</string>
+   </property>
+   <property name="toolTip">
+    <string>Open anamnesis</string>
+   </property>
+  </action>
+  <action name="action_openAnamnesis_2">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/anamnesis-open-icon.png</normaloff>:/img/anamnesis-open-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open anamnesis...</string>
+   </property>
+   <property name="toolTip">
+    <string>Open anamnesis</string>
+   </property>
+  </action>
+  <action name="action_closePatient">
+   <property name="text">
+    <string>Close Patient</string>
+   </property>
+  </action>
+  <action name="action_closeAnamnesis">
+   <property name="text">
+    <string>Close Anamnesis</string>
+   </property>
+  </action>
+  <action name="action_placeholderRP">
+   <property name="text">
+    <string>&lt;null&gt;</string>
+   </property>
+  </action>
+  <action name="action_placeholderRA">
+   <property name="text">
+    <string>&lt;null&gt;</string>
+   </property>
+  </action>
+  <action name="action_edtAnamnesis">
+   <property name="text">
+    <string>Edit anamnesis...</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="img.qrc"/>
+ </resources>
+ <connections/>
+</ui>
