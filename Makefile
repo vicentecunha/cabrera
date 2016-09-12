@@ -110,7 +110,6 @@ Makefile: Cabrera.pro ../../mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/win32-g+
 		../../mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/features/win32/qt_config.prf \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/win32-g++/qmake.conf \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/features/spec_post.prf \
-		.qmake.stash \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/features/exclusive_builds.prf \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/features/default_pre.prf \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/features/win32/default_pre.prf \
@@ -191,7 +190,6 @@ Makefile: Cabrera.pro ../../mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/win32-g+
 ../../mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/features/win32/qt_config.prf:
 ../../mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/win32-g++/qmake.conf:
 ../../mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/features/spec_post.prf:
-.qmake.stash:
 ../../mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/features/exclusive_builds.prf:
 ../../mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/features/default_pre.prf:
 ../../mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/features/win32/default_pre.prf:
@@ -230,7 +228,7 @@ all: release-all debug-all  FORCE
 clean: release-clean debug-clean  FORCE
 distclean: release-distclean debug-distclean  FORCE
 	-$(DEL_FILE) Makefile
-	-$(DEL_FILE) /home/vicente/INBRAMED/Cabrera/cabrera_plugin_import.cpp .qmake.stash
+	-$(DEL_FILE) /home/vicente/INBRAMED/cabrera/cabrera_plugin_import.cpp .qmake.stash
 
 release-mocclean:
 	$(MAKE) -f $(MAKEFILE).Release mocclean

@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>anamnesis-icon.png</file>
+        <file>anamnesis-open-icon.png</file>
+        <file>cabrera-icon.png</file>
+        <file>inbramed-icon.png</file>
+        <file>inbramed-watermark.png</file>
+        <file>new-patient-icon.png</file>
+        <file>open-patient-icon.png</file>
+        <file>sign-warning-icon.png</file>
+    </qresource>
+</RCC>

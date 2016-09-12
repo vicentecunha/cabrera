@@ -53,7 +53,7 @@ SOURCES       = main.cpp \
 		editpatient.cpp \
 		newanamnesis.cpp \
 		anamnesis.cpp \
-		editanamnesis.cpp /home/vicente/INBRAMED/Cabrera/cabrera_plugin_import.cpp \
+		editanamnesis.cpp /home/vicente/INBRAMED/cabrera/cabrera_plugin_import.cpp \
 		debug/qrc_img.cpp \
 		debug/moc_mainwindow.cpp \
 		debug/moc_about.cpp \
@@ -131,7 +131,7 @@ clean: compiler_clean
 	-$(DEL_FILE) debug/main.o debug/mainwindow.o debug/about.o debug/vo2000interface.o debug/patient.o debug/newpatient.o debug/warningdialog.o debug/editpatient.o debug/newanamnesis.o debug/anamnesis.o debug/editanamnesis.o debug/cabrera_plugin_import.o debug/qrc_img.o debug/moc_mainwindow.o debug/moc_about.o debug/moc_vo2000interface.o debug/moc_newpatient.o debug/moc_warningdialog.o debug/moc_editpatient.o debug/moc_newanamnesis.o debug/moc_editanamnesis.o
 
 distclean: clean 
-	-$(DEL_FILE) /home/vicente/INBRAMED/Cabrera/cabrera_plugin_import.cpp .qmake.stash
+	-$(DEL_FILE) /home/vicente/INBRAMED/cabrera/cabrera_plugin_import.cpp .qmake.stash
 	-$(DEL_FILE) $(DESTDIR_TARGET)
 	-$(DEL_FILE) Makefile.Debug
 
@@ -151,13 +151,12 @@ compiler_rcc_clean:
 debug/qrc_img.cpp: img.qrc \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/bin/rcc \
 		anamnesis-icon.png \
-		vo2000.png \
 		open-patient-icon.png \
 		inbramed-icon.png \
 		sign-warning-icon.png \
 		new-patient-icon.png \
-		cabrera-icon.png \
 		anamnesis-open-icon.png \
+		cabrera-icon.png \
 		inbramed-watermark.png
 	/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/bin/rcc -name img img.qrc -o debug/qrc_img.cpp
 
@@ -273,7 +272,7 @@ debug/moc_mainwindow.cpp: patient.h \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/include/QtCore/qsignalmapper.h \
 		mainwindow.h \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/bin/moc
-	/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/bin/moc $(DEFINES) -D__GNUC__ -DWIN32 -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/win32-g++ -I/home/vicente/INBRAMED/Cabrera -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtGui -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtSerialPort -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtCore -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++ -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/i686-w64-mingw32.static -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/backward -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include-fixed -I/home/vicente/mxe/usr/i686-w64-mingw32.static/include mainwindow.h -o debug/moc_mainwindow.cpp
+	/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/bin/moc $(DEFINES) -D__GNUC__ -DWIN32 -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/win32-g++ -I/home/vicente/INBRAMED/cabrera -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtGui -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtSerialPort -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtCore -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++ -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/i686-w64-mingw32.static -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/backward -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include-fixed -I/home/vicente/mxe/usr/i686-w64-mingw32.static/include mainwindow.h -o debug/moc_mainwindow.cpp
 
 debug/moc_about.cpp: ../../mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets/QDialog \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets/qdialog.h \
@@ -375,7 +374,7 @@ debug/moc_about.cpp: ../../mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets
 		../../mxe/usr/i686-w64-mingw32.static/qt5/include/QtGui/qtouchdevice.h \
 		about.h \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/bin/moc
-	/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/bin/moc $(DEFINES) -D__GNUC__ -DWIN32 -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/win32-g++ -I/home/vicente/INBRAMED/Cabrera -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtGui -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtSerialPort -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtCore -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++ -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/i686-w64-mingw32.static -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/backward -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include-fixed -I/home/vicente/mxe/usr/i686-w64-mingw32.static/include about.h -o debug/moc_about.cpp
+	/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/bin/moc $(DEFINES) -D__GNUC__ -DWIN32 -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/win32-g++ -I/home/vicente/INBRAMED/cabrera -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtGui -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtSerialPort -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtCore -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++ -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/i686-w64-mingw32.static -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/backward -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include-fixed -I/home/vicente/mxe/usr/i686-w64-mingw32.static/include about.h -o debug/moc_about.cpp
 
 debug/moc_vo2000interface.cpp: ../../mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets/QDialog \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets/qdialog.h \
@@ -489,7 +488,7 @@ debug/moc_vo2000interface.cpp: ../../mxe/usr/i686-w64-mingw32.static/qt5/include
 		../../mxe/usr/i686-w64-mingw32.static/qt5/include/QtGui/QKeyEvent \
 		vo2000interface.h \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/bin/moc
-	/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/bin/moc $(DEFINES) -D__GNUC__ -DWIN32 -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/win32-g++ -I/home/vicente/INBRAMED/Cabrera -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtGui -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtSerialPort -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtCore -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++ -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/i686-w64-mingw32.static -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/backward -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include-fixed -I/home/vicente/mxe/usr/i686-w64-mingw32.static/include vo2000interface.h -o debug/moc_vo2000interface.cpp
+	/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/bin/moc $(DEFINES) -D__GNUC__ -DWIN32 -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/win32-g++ -I/home/vicente/INBRAMED/cabrera -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtGui -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtSerialPort -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtCore -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++ -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/i686-w64-mingw32.static -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/backward -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include-fixed -I/home/vicente/mxe/usr/i686-w64-mingw32.static/include vo2000interface.h -o debug/moc_vo2000interface.cpp
 
 debug/moc_newpatient.cpp: patient.h \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/include/QtCore/QDate \
@@ -611,7 +610,7 @@ debug/moc_newpatient.cpp: patient.h \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets/qdialog.h \
 		newpatient.h \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/bin/moc
-	/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/bin/moc $(DEFINES) -D__GNUC__ -DWIN32 -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/win32-g++ -I/home/vicente/INBRAMED/Cabrera -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtGui -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtSerialPort -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtCore -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++ -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/i686-w64-mingw32.static -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/backward -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include-fixed -I/home/vicente/mxe/usr/i686-w64-mingw32.static/include newpatient.h -o debug/moc_newpatient.cpp
+	/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/bin/moc $(DEFINES) -D__GNUC__ -DWIN32 -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/win32-g++ -I/home/vicente/INBRAMED/cabrera -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtGui -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtSerialPort -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtCore -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++ -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/i686-w64-mingw32.static -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/backward -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include-fixed -I/home/vicente/mxe/usr/i686-w64-mingw32.static/include newpatient.h -o debug/moc_newpatient.cpp
 
 debug/moc_warningdialog.cpp: ../../mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets/QDialog \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets/qdialog.h \
@@ -713,7 +712,7 @@ debug/moc_warningdialog.cpp: ../../mxe/usr/i686-w64-mingw32.static/qt5/include/Q
 		../../mxe/usr/i686-w64-mingw32.static/qt5/include/QtGui/qtouchdevice.h \
 		warningdialog.h \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/bin/moc
-	/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/bin/moc $(DEFINES) -D__GNUC__ -DWIN32 -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/win32-g++ -I/home/vicente/INBRAMED/Cabrera -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtGui -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtSerialPort -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtCore -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++ -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/i686-w64-mingw32.static -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/backward -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include-fixed -I/home/vicente/mxe/usr/i686-w64-mingw32.static/include warningdialog.h -o debug/moc_warningdialog.cpp
+	/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/bin/moc $(DEFINES) -D__GNUC__ -DWIN32 -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/win32-g++ -I/home/vicente/INBRAMED/cabrera -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtGui -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtSerialPort -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtCore -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++ -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/i686-w64-mingw32.static -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/backward -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include-fixed -I/home/vicente/mxe/usr/i686-w64-mingw32.static/include warningdialog.h -o debug/moc_warningdialog.cpp
 
 debug/moc_editpatient.cpp: patient.h \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/include/QtCore/QDate \
@@ -836,7 +835,7 @@ debug/moc_editpatient.cpp: patient.h \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/include/QtCore/qabstractitemmodel.h \
 		editpatient.h \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/bin/moc
-	/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/bin/moc $(DEFINES) -D__GNUC__ -DWIN32 -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/win32-g++ -I/home/vicente/INBRAMED/Cabrera -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtGui -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtSerialPort -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtCore -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++ -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/i686-w64-mingw32.static -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/backward -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include-fixed -I/home/vicente/mxe/usr/i686-w64-mingw32.static/include editpatient.h -o debug/moc_editpatient.cpp
+	/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/bin/moc $(DEFINES) -D__GNUC__ -DWIN32 -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/win32-g++ -I/home/vicente/INBRAMED/cabrera -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtGui -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtSerialPort -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtCore -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++ -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/i686-w64-mingw32.static -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/backward -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include-fixed -I/home/vicente/mxe/usr/i686-w64-mingw32.static/include editpatient.h -o debug/moc_editpatient.cpp
 
 debug/moc_newanamnesis.cpp: anamnesis.h \
 		patient.h \
@@ -943,7 +942,7 @@ debug/moc_newanamnesis.cpp: anamnesis.h \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/include/QtGui/qtouchdevice.h \
 		newanamnesis.h \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/bin/moc
-	/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/bin/moc $(DEFINES) -D__GNUC__ -DWIN32 -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/win32-g++ -I/home/vicente/INBRAMED/Cabrera -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtGui -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtSerialPort -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtCore -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++ -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/i686-w64-mingw32.static -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/backward -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include-fixed -I/home/vicente/mxe/usr/i686-w64-mingw32.static/include newanamnesis.h -o debug/moc_newanamnesis.cpp
+	/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/bin/moc $(DEFINES) -D__GNUC__ -DWIN32 -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/win32-g++ -I/home/vicente/INBRAMED/cabrera -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtGui -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtSerialPort -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtCore -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++ -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/i686-w64-mingw32.static -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/backward -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include-fixed -I/home/vicente/mxe/usr/i686-w64-mingw32.static/include newanamnesis.h -o debug/moc_newanamnesis.cpp
 
 debug/moc_editanamnesis.cpp: anamnesis.h \
 		patient.h \
@@ -1050,7 +1049,7 @@ debug/moc_editanamnesis.cpp: anamnesis.h \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/include/QtGui/qtouchdevice.h \
 		editanamnesis.h \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/bin/moc
-	/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/bin/moc $(DEFINES) -D__GNUC__ -DWIN32 -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/win32-g++ -I/home/vicente/INBRAMED/Cabrera -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtGui -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtSerialPort -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtCore -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++ -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/i686-w64-mingw32.static -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/backward -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include-fixed -I/home/vicente/mxe/usr/i686-w64-mingw32.static/include editanamnesis.h -o debug/moc_editanamnesis.cpp
+	/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/bin/moc $(DEFINES) -D__GNUC__ -DWIN32 -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/mkspecs/win32-g++ -I/home/vicente/INBRAMED/cabrera -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtWidgets -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtGui -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtSerialPort -I/home/vicente/mxe/usr/i686-w64-mingw32.static/qt5/include/QtCore -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++ -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/i686-w64-mingw32.static -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include/c++/backward -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include -I/home/vicente/mxe/usr/lib/gcc/i686-w64-mingw32.static/4.9.4/include-fixed -I/home/vicente/mxe/usr/i686-w64-mingw32.static/include editanamnesis.h -o debug/moc_editanamnesis.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -2671,8 +2670,8 @@ debug/editanamnesis.o: editanamnesis.cpp editanamnesis.h \
 		../../mxe/usr/i686-w64-mingw32.static/qt5/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug/editanamnesis.o editanamnesis.cpp
 
-debug/cabrera_plugin_import.o: /home/vicente/INBRAMED/Cabrera/cabrera_plugin_import.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug/cabrera_plugin_import.o /home/vicente/INBRAMED/Cabrera/cabrera_plugin_import.cpp
+debug/cabrera_plugin_import.o: /home/vicente/INBRAMED/cabrera/cabrera_plugin_import.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug/cabrera_plugin_import.o /home/vicente/INBRAMED/cabrera/cabrera_plugin_import.cpp
 
 debug/qrc_img.o: debug/qrc_img.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug/qrc_img.o debug/qrc_img.cpp
